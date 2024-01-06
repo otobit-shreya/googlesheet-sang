@@ -33,7 +33,7 @@ const App = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [apiKey, range, spreadsheetId]);
   
 
   const handleSearchChange = (event) => {
