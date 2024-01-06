@@ -1,0 +1,219 @@
+body {
+  background-color: #f5d443;
+}
+
+.main {
+  padding: 50px;
+}
+
+.img-div {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.imgclass {
+  width: 350px;
+  height: 150px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 1.25em;
+  line-height: 1.3;
+  padding: 3px;
+  text-align: center;
+  color: white;
+  margin: 0px;
+  background-color: rgb(86, 67, 40);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.text-2 {
+  font-weight: 500;
+  font-size: 1.25em;
+  line-height: 1.3;
+  padding: 3px;
+  text-align: center;
+  color: white;
+  margin: 0px;
+  background-color: rgb(20, 58, 78);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.table-responsive {
+  overflow-x: auto; /* Makes the table horizontally scrollable on small screens */
+}
+
+.header {
+  background-color: white;
+  padding: 20px; /* Adjust the padding as needed */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.logo-main-text {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  font-family: math;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.sub-text {
+  display: flex;
+  justify-content: center;
+  font-family: math;
+  font-weight: 500;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.text-div {
+  text-align: center;
+}
+
+.text {
+  font-weight: bold;
+}
+
+.text-2 {
+  font-weight: bold;
+}
+
+.table-div {
+  width: 100%;
+  max-width: 800px;
+  overflow-x: auto;
+  margin: auto;
+  margin-left: 315px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+  background-color: black;
+  color: white;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.search-container {
+  margin-bottom: 20px;
+  margin-top: 30px;
+  display: flex;
+  width: 350px;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .mat-form-field {
+    width: 100%;
+  }
+  .main {
+    margin: 40px;
+  }
+  .table-container {
+    overflow-x: auto;
+    margin: 0 -16px; /* Adjust the margin as needed */
+    margin-top: 30px;
+  }
+  .table {
+    width: 100%;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+  }
+  .imgclass {
+    width: 200px;
+    height: 100px;
+  }
+  .table-div{
+  margin: auto;
+
+  }
+}
+
+/* Styles for the table on small screens */
+@media screen and (max-width: 600px) {
+  .main {
+    margin: -29px;
+  }
+  .img-div {
+    display: block;
+    text-align: center;
+  }
+  .text-div {
+    width: 200px;
+    margin-bottom: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .logo {
+    margin-top: 18px;
+  }
+  .logo-main {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  .table-container {
+    overflow-x: auto;
+    margin: 0 -8px; /* Adjust the margin as needed */
+  }
+  .table {
+    width: 100%;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+  }
+  .imgclass {
+    width: 200px;
+    height: 100px;
+  }
+  .table-div{
+    margin: auto;
+  
+    }
+}
