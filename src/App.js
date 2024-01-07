@@ -11,14 +11,11 @@ const App = () => {
   var apiKey = 'AIzaSyBrG1rbGcCbyz_6YFVJLU5vPPQ6evFU_ss'
 
   useEffect(() => {
-    // Fetch data from the API
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`)
       .then((response) => response.json())
       .then((responseData) => {
-        // Extract headers and data rows
         const [headers, ...rows] = responseData.values;
   
-        // Map the rows to objects with cleaned property names
         const cleanedData = rows.map((row) => {
           const cleanedItem = {};
           headers.forEach((header, index) => {
@@ -28,7 +25,7 @@ const App = () => {
         });
   
         setData(cleanedData);
-        setFilteredData(cleanedData); // Set filteredData initially with all data
+        setFilteredData(cleanedData);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -40,7 +37,6 @@ const App = () => {
     const searchValue = event.target.value.toLowerCase();
     setSearchSport(searchValue);
 
-    // Filter the data based on the search value
     const filtered = data.filter((item) =>
       item["Sport"].toLowerCase().includes(searchValue)
     );
@@ -80,39 +76,44 @@ const App = () => {
               value={searchSport}
               placeholder="Enter Sport Name here"
               onChange={handleSearchChange}
-              style={{padding:'15px'}}
+              style={{ padding: '15px' }}
             />
           </div>
-          <table className="custom-table">
-            <thead>
-              <tr>
-                <th>Sr. No.</th>
-                <th>Sport</th>
-                <th>Team1</th>
-                <th>Team2</th>
-                <th>Match Type</th>
-                <th>Winner</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{item["Sport"]}</td>
-                  <td>{item["Team1"]}</td>
-                  <td>{item["Team2"]}</td>
-                  <td>{item["Match Type"]}</td>
-                  <td>{item["Winner"]}</td>
-                  <td>{item["Score"]}</td>
+          {filteredData.length === 0 ? (
+            <p>No matching results found.</p>
+          ) : (
+            <table className="custom-table">
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>Sport</th>
+                  <th>Team1</th>
+                  <th>Team2</th>
+                  <th>Match Type</th>
+                  <th>Winner</th>
+                  <th>Score</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {filteredData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item["Sport"]}</td>
+                    <td>{item["Team1"]}</td>
+                    <td>{item["Team2"]}</td>
+                    <td>{item["Match Type"]}</td>
+                    <td>{item["Winner"]}</td>
+                    <td>{item["Score"]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </>
   );
+  
 };
 
 export default App;
