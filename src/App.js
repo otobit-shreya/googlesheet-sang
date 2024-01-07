@@ -92,6 +92,7 @@ const App = () => {
                 <th>Team2</th>
                 <th>Match Type</th>
                 <th>Winner</th>
+                <th>Score</th>
               </tr>
             </thead>
             <tbody>
@@ -103,6 +104,7 @@ const App = () => {
                   <td>{item["Team2"]}</td>
                   <td>{item["Match Type"]}</td>
                   <td>{item["Winner"]}</td>
+                  <td>{item["Score"]}</td>
                 </tr>
               ))}
             </tbody>
